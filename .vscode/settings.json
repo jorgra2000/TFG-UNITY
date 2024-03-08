@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ProyectoTFG.sln"
+    "dotnet.defaultSolution": "TFG-UNITY.sln"
 }

@@ -9,7 +9,7 @@ public class CarController : MonoBehaviour
     private float currentBreakForce, currentSteerAngle;
     private bool isBreaking;
 
-    [SerializeField] private float motorForce, breakForce, maxSteerAngle;
+    [SerializeField] private float motorForce, breakForce, maxSteerAngle, maxSpeed;
 
     [SerializeField] private WheelCollider frontWheelLeftCollider, frontWheelRightCollider, backWheelLeftCollider, backWheelRightCollider;
     [SerializeField] private Transform frontWheelLeftTransform, frontWheelRightTransform, backWheelLeftTransform, backWheelRightTransform;
@@ -32,8 +32,15 @@ public class CarController : MonoBehaviour
     //Car Movement
     void Motor()
     {
-        frontWheelLeftCollider.motorTorque = verticalInput * motorForce;
-        frontWheelRightCollider.motorTorque = verticalInput * motorForce;
+        float speed = verticalInput * motorForce;
+
+        if(speed > maxSpeed)
+        {
+            speed = maxSpeed;
+        }
+
+        frontWheelLeftCollider.motorTorque = speed;
+        frontWheelRightCollider.motorTorque = speed;
         currentBreakForce = isBreaking ? breakForce : 0f;
         Break();
     }
