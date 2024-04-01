@@ -13,13 +13,14 @@ public class Node : MonoBehaviour
     {
         controllerScript = GameObject.Find("Controller").GetComponent<Nodes>();
     }
+    
+    public int GetId()
+    {
+        return id;
+    }
 
     public void OnTriggerEnter(){
         controllerScript.CheckNode(id);
     }
 
-    public int GetId()
-    {
-        return id;
-    }
 }

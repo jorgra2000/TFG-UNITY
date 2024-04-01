@@ -5,13 +5,14 @@ using UnityEngine;
 public class Nodes : MonoBehaviour
 {
     [SerializeField] private GameObject[] nodes;
-
+    
+    private Chrono chronoScript;
     private int currentNode = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        chronoScript = GameObject.Find("Controller").GetComponent<Chrono>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,12 @@ public class Nodes : MonoBehaviour
     {
         if(currentNode == nodes.Length)
         {
-            print("Terminado");
+            if(!chronoScript.getFinishedRace())
+            {
+                chronoScript.setFinishedRace(true);
+                print("Terminado");
+            }
+
         }
     }
 
