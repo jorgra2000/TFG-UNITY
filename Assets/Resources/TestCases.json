@@ -1,0 +1,27 @@
+{
+    "circuits": [
+      {
+        "name": "SampleScene",
+        "test_case": [
+          {
+            "case_": "entrada: 0 veces: 0",
+            "nodes": [
+              1,2,4
+            ]
+          },
+          {
+            "case_": "entrada: 0 veces: 1",
+            "nodes": [
+              1,2,3,2,4
+            ]
+          },
+          {
+            "case_": "entrada: 0 veces: 2",
+            "nodes": [
+              1,2,3,2,3,2,4
+            ]
+          }
+        ]
+      }
+    ]
+}
