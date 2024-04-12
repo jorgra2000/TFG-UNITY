@@ -21,7 +21,7 @@ public class Chrono : MonoBehaviour
         this.finishedRace = finishedRace;
     }
 
-    public bool getFinishedRace()
+    public bool GetFinishedRace()
     {
         return finishedRace;
     }
@@ -30,7 +30,7 @@ public class Chrono : MonoBehaviour
     {
         if(!finishedRace)
         {
-            advanceChrono();
+            AdvanceChrono();
         }
 
     }
@@ -42,7 +42,7 @@ public class Chrono : MonoBehaviour
         timeText.text = formatedTime;
     }
 
-    private void advanceChrono()
+    private void AdvanceChrono()
     {
         currentTime += Time.deltaTime;
 

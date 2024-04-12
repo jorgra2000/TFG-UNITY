@@ -76,7 +76,7 @@ public class Nodes : MonoBehaviour
     {
         if(currentNode == nodesPath.Count)
         {
-            if(!chronoScript.getFinishedRace())
+            if(!chronoScript.GetFinishedRace())
             {
                 chronoScript.setFinishedRace(true);
                 print("Terminado");
