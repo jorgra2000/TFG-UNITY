@@ -6,49 +6,28 @@ using TMPro;
 
 public class TestQuestion : MonoBehaviour
 {
-    private float currentTime = 0f;
-    private float panelActiveTime = 0f;
-
     public TextAsset jsonFile;
-
     public GameObject panelTestQuestion;
     public TMP_Text questionText;
     public TMP_Text response1Text;
     public TMP_Text response2Text;
     private Chrono chronoScript;
-
-    private float randomTestQuestTime;
-
     private QuestionList questionsData = new QuestionList();
+
+
+    private float currentTime = 0f;
+    private float panelActiveTime = 0f;
+    private float randomTestQuestTime;
     private int randomQuestion;
 
-    [System.Serializable]
-    public class Question
-    {
-        public string question;
-        public string response1Text;
-        public string response2Text;
-        public bool response1;
-        public bool response2;
-    }
-
-    [System.Serializable]
-    public class QuestionList
-    {
-        public Question[] testQuestions;
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
         chronoScript = GameObject.Find("Controller").GetComponent<Chrono>();
         randomTestQuestTime = UnityEngine.Random.Range(20,50);
-        //TextAsset jsonFile = Resources.Load<TextAsset>("TestQuestions");
 
         if (jsonFile != null)
         {
             questionsData = JsonUtility.FromJson<QuestionList>(jsonFile.text);
-            print(questionsData.testQuestions);
         }
     }
 
@@ -106,5 +85,22 @@ public class TestQuestion : MonoBehaviour
         }
 
         panelTestQuestion.SetActive(false);
+    }
+
+
+    [System.Serializable]
+    public class Question
+    {
+        public string question;
+        public string response1Text;
+        public string response2Text;
+        public bool response1;
+        public bool response2;
+    }
+
+    [System.Serializable]
+    public class QuestionList
+    {
+        public Question[] testQuestions;
     }
 }

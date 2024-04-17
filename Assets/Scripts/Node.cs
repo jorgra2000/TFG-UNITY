@@ -22,5 +22,4 @@ public class Node : MonoBehaviour
     public void OnTriggerEnter(){
         controllerScript.CheckNode(id);
     }
-
 }

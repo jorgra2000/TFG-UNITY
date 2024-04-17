@@ -13,7 +13,8 @@ public class CarController : MonoBehaviour
 
     [SerializeField] private WheelCollider frontWheelLeftCollider, frontWheelRightCollider, backWheelLeftCollider, backWheelRightCollider;
     [SerializeField] private Transform frontWheelLeftTransform, frontWheelRightTransform, backWheelLeftTransform, backWheelRightTransform;
-    void FixedUpdate() 
+
+    void FixedUpdate()
     {
         GetInput();
         Motor();
@@ -21,15 +22,14 @@ public class CarController : MonoBehaviour
         UpdateAllWheels();
     }
 
-    //Controls
+    
     void GetInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         isBreaking = Input.GetKey(KeyCode.Space);
     }
-
-    //Car Movement
+   
     void Motor()
     {
         float speed = verticalInput * motorForce;
@@ -44,8 +44,7 @@ public class CarController : MonoBehaviour
         currentBreakForce = isBreaking ? breakForce : 0f;
         Break();
     }
-
-    //Apply break
+    
     void Break()
     {
        frontWheelLeftCollider.brakeTorque = currentBreakForce;

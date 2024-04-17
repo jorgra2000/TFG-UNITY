@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Chrono : MonoBehaviour
@@ -16,16 +13,6 @@ public class Chrono : MonoBehaviour
         timeText = GameObject.Find("TimeText").GetComponent<TMP_Text>();
     }
 
-    public void setFinishedRace(bool finishedRace)
-    {
-        this.finishedRace = finishedRace;
-    }
-
-    public bool GetFinishedRace()
-    {
-        return finishedRace;
-    }
-
     void Update()
     {
         if(!finishedRace)
@@ -37,7 +24,7 @@ public class Chrono : MonoBehaviour
 
     private void UpdateChrono()
     {
-        string formatedTime = string.Format("{0:00}:{1:00}", min, secs);
+        string formatedTime = string.Format("{0:0}:{1:00}.{2:00}", min, secs, (int)(currentTime * 100 % 100));
 
         timeText.text = formatedTime;
     }
@@ -47,9 +34,19 @@ public class Chrono : MonoBehaviour
         currentTime += Time.deltaTime;
 
         secs = (int)(currentTime % 60);
-        min = (int)((currentTime / 60) % 60);
+        min = (int)(currentTime / 60 % 60);
 
         UpdateChrono();
+    }
+
+    public void SetFinishedRace(bool finishedRace)
+    {
+        this.finishedRace = finishedRace;
+    }
+
+    public bool GetFinishedRace()
+    {
+        return finishedRace;
     }
 
 }

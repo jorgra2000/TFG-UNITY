@@ -167,6 +167,7 @@ MonoBehaviour:
   motorForce: 1000
   breakForce: 3000
   maxSteerAngle: 30
+  maxSpeed: 500
   frontWheelLeftCollider: {fileID: 1992783150579806864}
   frontWheelRightCollider: {fileID: 8978954200923267191}
   backWheelLeftCollider: {fileID: 1563649579536812002}
