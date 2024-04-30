@@ -141,6 +141,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5778114107548703203}
+    - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8796626480191318636}
+    - targetCorrespondingSourceObject: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6007481763614333853}
   m_SourcePrefab: {fileID: 100100000, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
 --- !u!4 &774447812055640244 stripped
 Transform:
@@ -164,10 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a1e9f5838e4a34aa52c6aa11296311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 1000
+  motorForce: 1100
   breakForce: 3000
   maxSteerAngle: 30
-  maxSpeed: 500
+  maxSpeed: 600
   frontWheelLeftCollider: {fileID: 1992783150579806864}
   frontWheelRightCollider: {fileID: 8978954200923267191}
   backWheelLeftCollider: {fileID: 1563649579536812002}
@@ -176,6 +182,40 @@ MonoBehaviour:
   frontWheelRightTransform: {fileID: 3691945853936946820}
   backWheelLeftTransform: {fileID: 4724725297836607384}
   backWheelRightTransform: {fileID: 4499300007860512955}
+--- !u!65 &8796626480191318636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432461355580235908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0594354, y: 1.2289026, z: 1.66}
+  m_Center: {x: 0, y: 0.78649104, z: 1.2}
+--- !u!114 &6007481763614333853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432461355580235908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50718c8542ecaa47b6689f337a5abe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathErrorImage: {fileID: 0}
 --- !u!146 &1563649579536812002 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 3145262460232535540, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}

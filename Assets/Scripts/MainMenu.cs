@@ -7,6 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public void StartSinglePlayer()
     {
+        SceneManager.LoadScene("SelectCar");
+    }
+
+    public void StartGame()
+    {
         SceneManager.LoadScene("SampleScene");
     }
 }

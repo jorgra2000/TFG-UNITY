@@ -77,6 +77,11 @@ public class Nodes : MonoBehaviour
         return nodesPath[currentNode-1].GetComponent<Node>().GetId();
     }
 
+    public int GetGoToNode()
+    {
+        return nodesPath[currentNode].GetComponent<Node>().GetId();
+    }
+
 
     [System.Serializable]
     public class Circuit

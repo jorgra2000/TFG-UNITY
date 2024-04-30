@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1217fb6adc841864aa1b5d8db763b130
   - enabled: 1
+    path: Assets/Scenes/SelectCar.unity
+    guid: 71b58f817588f42428b765f712336f52
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
