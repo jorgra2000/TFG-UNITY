@@ -5,13 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject helpPanel;
+
+    public void Start()
+    {
+        PlayerPrefs.SetString("Color", "Yellow");
+    }
+
     public void StartSinglePlayer()
     {
         SceneManager.LoadScene("SelectCar");
     }
 
-    public void StartGame()
+    public void HelpButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        helpPanel.SetActive(true);
+    }
+
+    public void ExitHelpButton()
+    {
+        helpPanel.SetActive(false);
     }
 }

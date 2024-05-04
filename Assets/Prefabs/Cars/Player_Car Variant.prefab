@@ -170,10 +170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a1e9f5838e4a34aa52c6aa11296311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carBody: {fileID: 1725339250327812541}
   motorForce: 1100
   breakForce: 3000
   maxSteerAngle: 30
-  maxSpeed: 600
+  maxSpeed: 650
   frontWheelLeftCollider: {fileID: 1992783150579806864}
   frontWheelRightCollider: {fileID: 8978954200923267191}
   backWheelLeftCollider: {fileID: 1563649579536812002}
@@ -201,7 +202,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0594354, y: 1.2289026, z: 1.66}
+  m_Size: {x: 1.6, y: 1.2289026, z: 1.6}
   m_Center: {x: 0, y: 0.78649104, z: 1.2}
 --- !u!114 &6007481763614333853
 MonoBehaviour:
@@ -219,6 +220,11 @@ MonoBehaviour:
 --- !u!146 &1563649579536812002 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 3145262460232535540, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 4473486791838730774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1725339250327812541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3018720586628133803, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
   m_PrefabInstance: {fileID: 4473486791838730774}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1777497641511680574 stripped

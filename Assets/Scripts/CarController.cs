@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    public GameObject carBody;
+
     private float horizontalInput, verticalInput;
     private float currentBreakForce, currentSteerAngle;
     private bool isBreaking;
@@ -15,6 +18,21 @@ public class CarController : MonoBehaviour
     [SerializeField] private WheelCollider frontWheelLeftCollider, frontWheelRightCollider, backWheelLeftCollider, backWheelRightCollider;
     [SerializeField] private Transform frontWheelLeftTransform, frontWheelRightTransform, backWheelLeftTransform, backWheelRightTransform;
 
+
+    void Start()
+    {
+        Renderer carRenderer = carBody.GetComponent<Renderer>();
+
+        switch(PlayerPrefs.GetString("Color"))
+        {
+            case "Yellow": carRenderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Car_Colors/YellowCar_Mat.mat");
+                break;
+            case "Blue": carRenderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Car_Colors/BlueCar_Mat.mat");
+                break;
+            case "Red": carRenderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Car_Colors/RedCar_Mat.mat");
+                break;
+        }   
+    }
 
     void FixedUpdate()
     {
