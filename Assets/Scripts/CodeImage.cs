@@ -23,7 +23,7 @@ public class CodeImage : MonoBehaviour
     public void CalculatePanel()
     {
         int nodeBefore = currentNode;
-        currentNode = nodesScript.GetCurrentNode() - 1;
+        currentNode = nodesScript.GetCurrentNodeNumber() - 1;
         ShowPanel(currentNode, nodeBefore);
     }
 

@@ -25,11 +25,11 @@ public class CarController : MonoBehaviour
 
         switch(PlayerPrefs.GetString("Color"))
         {
-            case "Yellow": carRenderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Car_Colors/YellowCar_Mat.mat");
+            case "Yellow": carRenderer.material = Resources.Load<Material>("Materials/Car_Colors/YellowCar_Mat");
                 break;
-            case "Blue": carRenderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Car_Colors/BlueCar_Mat.mat");
+            case "Blue": carRenderer.material = Resources.Load<Material>("Materials/Car_Colors/BlueCar_Mat");
                 break;
-            case "Red": carRenderer.material = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Car_Colors/RedCar_Mat.mat");
+            case "Red": carRenderer.material = Resources.Load<Material>("Materials/Car_Colors/RedCar_Mat");
                 break;
         }   
     }

@@ -3,6 +3,8 @@ using TMPro;
 
 public class Chrono : MonoBehaviour
 {
+    public TMP_Text timeTextFinished;
+
     private float currentTime = 0f;
     private int secs, min;
     private bool finishedRace = false;
@@ -18,6 +20,10 @@ public class Chrono : MonoBehaviour
         if(!finishedRace)
         {
             AdvanceChrono();
+        }
+        else
+        {
+            timeTextFinished.text = timeText.text;
         }
 
     }

@@ -39,6 +39,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016151393840242557, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: c0c749cabf9e8ef4c9b0158f1a0c4e46, type: 2}
     - target: {fileID: 1057494946909100755, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_SuspensionSpring.damper
       value: 9000

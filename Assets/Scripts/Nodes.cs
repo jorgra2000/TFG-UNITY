@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -7,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Nodes : MonoBehaviour
 {
+    public GameObject finishPanel;
     public TextAsset jsonFile;
     [SerializeField]
     private GameObject[] nodes;
@@ -58,7 +60,7 @@ public class Nodes : MonoBehaviour
             if(!chronoScript.GetFinishedRace())
             {
                 chronoScript.SetFinishedRace(true);
-                print("Terminado");
+                StartCoroutine(ShowFinishPanel());
             }
         }
     }
@@ -72,9 +74,14 @@ public class Nodes : MonoBehaviour
         }
     }
 
-    public int GetCurrentNode()
+    public int GetCurrentNodeNumber()
     {
         return nodesPath[currentNode-1].GetComponent<Node>().GetId();
+    }
+
+    public GameObject GetCurrentNode()
+    {
+        return nodesPath[currentNode-1];
     }
 
     public int GetGoToNode()
@@ -82,6 +89,16 @@ public class Nodes : MonoBehaviour
         return nodesPath[currentNode].GetComponent<Node>().GetId();
     }
 
+    IEnumerator ShowFinishPanel()
+    {
+        yield return new WaitForSeconds(2);
+
+        finishPanel.SetActive(true);
+        Time.timeScale = 0f;
+    } 
+
+
+    //JSON circuits
 
     [System.Serializable]
     public class Circuit
