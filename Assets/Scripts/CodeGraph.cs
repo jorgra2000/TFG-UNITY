@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CodeImage : MonoBehaviour
+public class CodeGraph : MonoBehaviour
 {
     public GameObject[] panels;
 

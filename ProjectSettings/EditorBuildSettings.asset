@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectCar.unity
     guid: 71b58f817588f42428b765f712336f52
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/CircuitSelect.unity
+    guid: 1813c9fff13817c4e82f35ec0ae893cb
+  - enabled: 1
+    path: Assets/Scenes/Circuit 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Circuit 2.unity
+    guid: e07c31360961dc249a197605a172f4ba
   m_configObjects: {}

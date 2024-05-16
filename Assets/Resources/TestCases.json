@@ -1,7 +1,7 @@
 {
     "circuits": [
       {
-        "name": "SampleScene",
+        "name": "Circuit 1",
         "test_case": [
           {
             "case_": "entrada: 0 veces: 0",
@@ -21,6 +21,11 @@
               1,2,3,2,3,2,4
             ]
           }
+        ]
+      },
+      {
+        "name": "Circuit 2",
+        "test_case": [
         ]
       }
     ]

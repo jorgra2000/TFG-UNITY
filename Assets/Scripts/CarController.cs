@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
@@ -61,6 +56,8 @@ public class CarController : MonoBehaviour
 
         frontWheelLeftCollider.motorTorque = speed;
         frontWheelRightCollider.motorTorque = speed;
+        backWheelLeftCollider.motorTorque = speed;
+        backWheelRightCollider.motorTorque = speed;
         currentBreakForce = isBreaking ? breakForce : 0f;
         Break();
     }
@@ -85,7 +82,7 @@ public class CarController : MonoBehaviour
         UpdateWheel(frontWheelLeftCollider, frontWheelLeftTransform);
         UpdateWheel(frontWheelRightCollider, frontWheelRightTransform);
         UpdateWheel(backWheelLeftCollider, backWheelLeftTransform);
-        UpdateWheel(backWheelLeftCollider, backWheelLeftTransform);        
+        UpdateWheel(backWheelRightCollider, backWheelRightTransform);        
     }
 
     private void UpdateWheel(WheelCollider wheelCollider, Transform wheelTransform)

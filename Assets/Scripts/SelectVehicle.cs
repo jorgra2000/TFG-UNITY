@@ -21,9 +21,9 @@ public class SelectVehicle : MonoBehaviour
         car.transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 
-    public void StartGame()
+    public void GoToCircuit()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("CircuitSelect");
     }
 
     public void ColorYellow()
