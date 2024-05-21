@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Node : MonoBehaviour
@@ -8,6 +5,7 @@ public class Node : MonoBehaviour
     private Nodes controllerScript;
 
     [SerializeField] private int id;
+    [SerializeField] private bool changeVariables;
 
     private void Start()
     {
@@ -20,6 +18,16 @@ public class Node : MonoBehaviour
     }
 
     public void OnTriggerEnter(){
-        controllerScript.CheckNode(id);
+        
+        if(controllerScript.CheckNode(id))
+        {
+            if(changeVariables)
+            {
+                controllerScript.CalculateVariables(1,1);
+                controllerScript.CalculateVariables(0,controllerScript.GetInputValue());
+                controllerScript.UpdateVariablesText();
+            }
+        }
+
     }
 }

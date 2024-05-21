@@ -10,20 +10,26 @@ public class Nodes : MonoBehaviour
 {
     public GameObject finishPanel;
     public TextAsset jsonFile;
-    [SerializeField]
-    private GameObject[] nodes;
-    [SerializeField]
-    private List<GameObject> nodesPath;
+    
+    [SerializeField] private GameObject[] nodes;
+    [SerializeField] private List<GameObject> nodesPath;
+    [SerializeField] private string[] localVariablesNames;
+    [SerializeField] private int[] localVariablesValue;
+
     private CircuitsList circuitsData = new CircuitsList();
 
     
     private Chrono chronoScript;
     private int currentNode = 0;
     private TMP_Text testText;
+    private TMP_Text variablesText;
+    private string builderVariablesText = "";
+    private int inputValue;
 
 
     void Start()
     {
+        variablesText = GameObject.Find("VariablesText").GetComponent<TMP_Text>();
         testText = GameObject.Find("TestCaseText").GetComponent<TMP_Text>();
         chronoScript = GameObject.Find("Controller").GetComponent<Chrono>();
 
@@ -40,6 +46,8 @@ public class Nodes : MonoBehaviour
 
                 testText.text = circuit.test_case[randomCase].case_;
 
+                inputValue = circuit.test_case[randomCase].input;
+
                 foreach (int nodeId in circuit.test_case[randomCase].nodes)
                 {
                     GameObject nodeObject = nodes.FirstOrDefault(n => n.GetComponent<Node>().GetId() == nodeId);
@@ -49,8 +57,10 @@ public class Nodes : MonoBehaviour
                         nodesPath.Add(nodeObject);
                     }
                 }
-            }           
+            }          
         }
+
+        UpdateVariablesText();
     }
 
     void Update()
@@ -63,15 +73,19 @@ public class Nodes : MonoBehaviour
                 StartCoroutine(ShowFinishPanel());
             }
         }
+
+        //UpdateVariablesText();
     }
 
-    public void CheckNode(int nodeToCheck)
+    public bool CheckNode(int nodeToCheck)
     {
         if(nodeToCheck == nodesPath[currentNode].GetComponent<Node>().GetId())
         {
-            print(nodeToCheck);
             currentNode++;
+            return true;
         }
+
+        return false;
     }
 
     public int GetCurrentNodeNumber()
@@ -95,7 +109,30 @@ public class Nodes : MonoBehaviour
 
         finishPanel.SetActive(true);
         Time.timeScale = 0f;
-    } 
+    }
+
+    public void CalculateVariables(int index, int num)
+    {
+        localVariablesValue[index] += num;
+    }
+
+    public void UpdateVariablesText()
+    {
+        for(int i = 0; i < localVariablesNames.Length; i++)
+        {
+            builderVariablesText += localVariablesNames[i] + " = " + localVariablesValue[i] + "  "; 
+        }
+
+        variablesText.text = builderVariablesText;
+
+        builderVariablesText = "";
+    }
+
+    public int GetInputValue()
+    {
+        return inputValue;
+    }
+
 
 
     //JSON circuits
@@ -110,6 +147,7 @@ public class Nodes : MonoBehaviour
     public class TestCase
     {
         public string case_;
+        public int input;
         public int[] nodes;
     }
 

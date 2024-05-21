@@ -26,7 +26,7 @@ public class PathError : MonoBehaviour
             pathErrorImage.SetActive(true);
             timeErrorPath += Time.deltaTime;
 
-            if (timeErrorPath >= 8f)
+            if (timeErrorPath >= 5f)
             {
                 respawnScript.RespawnInNode();
             }

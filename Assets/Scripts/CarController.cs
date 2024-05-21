@@ -4,11 +4,15 @@ public class CarController : MonoBehaviour
 {
     public GameObject carBody;
 
+    private AudioSource audioSource;
+    private float currentSpeed;
+    private float pitchCar;
+
     private float horizontalInput, verticalInput;
     private float currentBreakForce, currentSteerAngle;
     private bool isBreaking;
 
-    [SerializeField] private float motorForce, breakForce, maxSteerAngle, maxSpeed;
+    [SerializeField] private float motorForce, breakForce, maxSteerAngle, minSpeed, maxSpeed, minPitch, maxPitch;
 
     [SerializeField] private WheelCollider frontWheelLeftCollider, frontWheelRightCollider, backWheelLeftCollider, backWheelRightCollider;
     [SerializeField] private Transform frontWheelLeftTransform, frontWheelRightTransform, backWheelLeftTransform, backWheelRightTransform;
@@ -16,6 +20,7 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Renderer carRenderer = carBody.GetComponent<Renderer>();
 
         switch(PlayerPrefs.GetString("Color"))
@@ -35,6 +40,7 @@ public class CarController : MonoBehaviour
         Motor();
         Steering();
         UpdateAllWheels();
+        EngineSound();
     }
 
     
@@ -75,6 +81,27 @@ public class CarController : MonoBehaviour
        currentSteerAngle = maxSteerAngle * horizontalInput;
        frontWheelLeftCollider.steerAngle = currentSteerAngle;
        frontWheelRightCollider.steerAngle = currentSteerAngle;  
+    }
+
+    void EngineSound()
+    {
+        currentSpeed = GetComponent<Rigidbody>().velocity.magnitude;
+        pitchCar = GetComponent<Rigidbody>().velocity.magnitude / 50f;
+
+        if(currentSpeed <= minSpeed)
+        {
+            audioSource.pitch = minPitch;
+        }
+
+        if(currentSpeed > minSpeed && currentSpeed < maxSpeed)
+        {
+            audioSource.pitch = minPitch + pitchCar;
+        }
+
+        if(currentSpeed >= maxSpeed)
+        {
+            audioSource.pitch = maxPitch;
+        }
     }
 
     void UpdateAllWheels()

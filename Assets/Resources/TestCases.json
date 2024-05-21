@@ -4,19 +4,22 @@
         "name": "Circuit 1",
         "test_case": [
           {
-            "case_": "entrada: 0 veces: 0",
+            "case_": "entrada = 0  veces = 0",
+            "input": 0,
             "nodes": [
               1,2,4
             ]
           },
           {
-            "case_": "entrada: 0 veces: 1",
+            "case_": "entrada = 1  veces = 1",
+            "input": 1,
             "nodes": [
               1,2,3,2,4
             ]
           },
           {
-            "case_": "entrada: 0 veces: 2",
+            "case_": "entrada = 2  veces = 2",
+            "input": 2,
             "nodes": [
               1,2,3,2,3,2,4
             ]

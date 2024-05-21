@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CircuitSelect : MonoBehaviour
 {
     public TextAsset jsonFile;
+    public Image backImage;
+    public Image codeImage;
 
     private CircuitsList circuitsData = new CircuitsList();
     private int currentNumberCircuit = 0;
@@ -23,11 +25,16 @@ public class CircuitSelect : MonoBehaviour
 
         leftButton = GameObject.Find("LeftButton");
         rightButton = GameObject.Find("RightButton");
+
+        backImage.sprite = Resources.Load<Sprite>("ImageCircuits/Screen1");
+        codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit1");
     }
 
-    // Update is called once per frame
     void Update()
     {
+        backImage.sprite = Resources.Load<Sprite>("ImageCircuits/Screen" + (currentNumberCircuit+1));
+        codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit" + (currentNumberCircuit+1));
+
         if(currentNumberCircuit == 0)
         {
             leftButton.SetActive(false);
