@@ -12,7 +12,9 @@ public class CarController : MonoBehaviour
     private float currentBreakForce, currentSteerAngle;
     private bool isBreaking;
 
-    [SerializeField] private float motorForce, breakForce, maxSteerAngle, minSpeed, maxSpeed, minPitch, maxPitch;
+    private Chrono chronoScript;
+
+    [SerializeField] private float motorForce, breakForce, maxSteerAngle, minSpeedSound, maxSpeedSound, maxSpeed, minPitch, maxPitch;
 
     [SerializeField] private WheelCollider frontWheelLeftCollider, frontWheelRightCollider, backWheelLeftCollider, backWheelRightCollider;
     [SerializeField] private Transform frontWheelLeftTransform, frontWheelRightTransform, backWheelLeftTransform, backWheelRightTransform;
@@ -22,6 +24,7 @@ public class CarController : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         Renderer carRenderer = carBody.GetComponent<Renderer>();
+        chronoScript = GameObject.Find("Controller").GetComponent<Chrono>();
 
         switch(PlayerPrefs.GetString("Color"))
         {
@@ -31,12 +34,20 @@ public class CarController : MonoBehaviour
                 break;
             case "Red": carRenderer.material = Resources.Load<Material>("Materials/Car_Colors/RedCar_Mat");
                 break;
+            case "Gray": carRenderer.material = Resources.Load<Material>("Materials/Car_Colors/GrayCar_Mat");
+                break;
+            case "Purple": carRenderer.material = Resources.Load<Material>("Materials/Car_Colors/PurpleCar_Mat");
+                break;
         }   
     }
 
     void FixedUpdate()
     {
-        GetInput();
+        if(!chronoScript.GetFinishedRace())
+        {
+            GetInput();
+        }
+
         Motor();
         Steering();
         UpdateAllWheels();
@@ -88,19 +99,19 @@ public class CarController : MonoBehaviour
         currentSpeed = GetComponent<Rigidbody>().velocity.magnitude;
         pitchCar = GetComponent<Rigidbody>().velocity.magnitude / 50f;
 
-        if(currentSpeed <= minSpeed)
+        if(currentSpeed <= minSpeedSound)
         {
             audioSource.pitch = minPitch;
         }
 
-        if(currentSpeed > minSpeed && currentSpeed < maxSpeed)
+        if(currentSpeed > minSpeedSound && currentSpeed < maxSpeedSound)
         {
             audioSource.pitch = minPitch + pitchCar;
         }
 
-        if(currentSpeed >= maxSpeed)
+        if(currentSpeed >= maxSpeedSound)
         {
-            audioSource.pitch = maxPitch;
+            audioSource.pitch = maxSpeedSound;
         }
     }
 

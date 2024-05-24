@@ -43,4 +43,16 @@ public class SelectVehicle : MonoBehaviour
         bodyCar.GetComponent<Renderer>().material = colors[2];
         PlayerPrefs.SetString("Color", "Red");
     }
+
+    public void ColorGray()
+    {
+        bodyCar.GetComponent<Renderer>().material = colors[3];
+        PlayerPrefs.SetString("Color", "Gray");
+    }
+
+    public void ColorPurple()
+    {
+        bodyCar.GetComponent<Renderer>().material = colors[4];
+        PlayerPrefs.SetString("Color", "Purple");
+    }
 }

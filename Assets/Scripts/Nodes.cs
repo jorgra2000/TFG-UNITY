@@ -16,6 +16,9 @@ public class Nodes : MonoBehaviour
     [SerializeField] private string[] localVariablesNames;
     [SerializeField] private int[] localVariablesValue;
 
+    public TMP_Text countdownText;
+    public AudioClip song;
+
     private CircuitsList circuitsData = new CircuitsList();
 
     
@@ -25,13 +28,22 @@ public class Nodes : MonoBehaviour
     private TMP_Text variablesText;
     private string builderVariablesText = "";
     private int inputValue;
+    private int countdownValue = 3;
+    private GameObject musicManager;
 
+
+    void Awake()
+    {
+        GameObject musicManager = GameObject.Find("MusicManager");
+        Destroy(musicManager);
+    }
 
     void Start()
     {
         variablesText = GameObject.Find("VariablesText").GetComponent<TMP_Text>();
         testText = GameObject.Find("TestCaseText").GetComponent<TMP_Text>();
         chronoScript = GameObject.Find("Controller").GetComponent<Chrono>();
+        musicManager = GameObject.Find("MusicManagerGame");
 
         if (jsonFile != null)
         {
@@ -61,6 +73,9 @@ public class Nodes : MonoBehaviour
         }
 
         UpdateVariablesText();
+
+        StartCoroutine(CountdownStart());
+        //TO DO: Esperar un segundo o dos para hacer el sonido de 3 2 1
     }
 
     void Update()
@@ -70,11 +85,12 @@ public class Nodes : MonoBehaviour
             if(!chronoScript.GetFinishedRace())
             {
                 chronoScript.SetFinishedRace(true);
+                musicManager.GetComponent<AudioSource>().Stop();
+                musicManager.GetComponent<AudioSource>().loop = false;
                 StartCoroutine(ShowFinishPanel());
             }
         }
 
-        //UpdateVariablesText();
     }
 
     public bool CheckNode(int nodeToCheck)
@@ -133,6 +149,30 @@ public class Nodes : MonoBehaviour
         return inputValue;
     }
 
+
+    IEnumerator CountdownStart()
+    {
+        while(countdownValue > 0)
+        {
+            countdownText.text = countdownValue.ToString();
+
+            yield return new WaitForSeconds(1f);
+
+            countdownValue--;
+        }
+
+        countdownText.text = "GO!";
+
+        chronoScript.SetFinishedRace(false);
+
+        yield return new WaitForSeconds(1f);
+
+        countdownText.gameObject.SetActive(false);
+
+        musicManager.GetComponent<AudioSource>().clip = song;
+        musicManager.GetComponent<AudioSource>().loop = true;
+        musicManager.GetComponent<AudioSource>().Play();
+    }
 
 
     //JSON circuits

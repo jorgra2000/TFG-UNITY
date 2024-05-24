@@ -7,7 +7,7 @@ public class Chrono : MonoBehaviour
 
     private float currentTime = 0f;
     private int secs, min;
-    private bool finishedRace = false;
+    private bool finishedRace = true;
     private TMP_Text timeText;
 
     private void Start()
