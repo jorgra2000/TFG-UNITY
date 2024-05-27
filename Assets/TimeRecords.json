@@ -1,0 +1,9 @@
+{
+    "games": [
+        {
+            "name": "Circuit 1",
+            "test_case": "entrada = 1  veces = 1",
+            "time": "1:03.63"
+        }
+    ]
+}

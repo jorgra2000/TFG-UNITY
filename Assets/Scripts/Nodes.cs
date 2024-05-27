@@ -116,7 +116,15 @@ public class Nodes : MonoBehaviour
 
     public int GetGoToNode()
     {
-        return nodesPath[currentNode].GetComponent<Node>().GetId();
+        try
+        {
+            return nodesPath[currentNode].GetComponent<Node>().GetId();
+        }
+        catch
+        {
+            return -999;
+        }
+
     }
 
     IEnumerator ShowFinishPanel()

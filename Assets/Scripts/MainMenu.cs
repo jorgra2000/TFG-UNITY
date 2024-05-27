@@ -6,16 +6,24 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public TextAsset jsonFile;
     public GameObject helpPanel;
     public RawImage image;
 
     [SerializeField]
     private float x,y;
 
+    private GameList gamesData = new GameList();
+
     public void Start()
     {
         Time.timeScale = 1f;
         PlayerPrefs.SetString("Color", "Yellow");
+
+        if (jsonFile != null)
+        {
+            gamesData = JsonUtility.FromJson<GameList>(jsonFile.text);          
+        }
     }
 
     void Update()
@@ -36,5 +44,23 @@ public class MainMenu : MonoBehaviour
     public void ExitHelpButton()
     {
         helpPanel.SetActive(false);
+    }
+
+
+
+    //JSON
+
+    [System.Serializable]
+    public class Game
+    {
+        public string name;
+        public string test_case;
+        public string time;
+    }
+
+    [System.Serializable]
+    public class GameList
+    {
+        public Game[] games;
     }
 }
