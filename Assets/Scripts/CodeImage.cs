@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CodeImage : MonoBehaviour
@@ -19,10 +17,19 @@ public class CodeImage : MonoBehaviour
         CalculatePanel();
     }
 
+    public void SetCurrentNode(int node)
+    {
+        currentNode = node;
+    }
+
     public void CalculatePanel()
     {
         int nodeBefore = currentNode;
         currentNode = nodesScript.GetCurrentNodeNumber() - 1;
+        if(currentNode == 98)
+        {
+            currentNode = nodesScript.GetMaxNode() - 1;
+        }
         ShowPanel(currentNode, nodeBefore);
     }
 

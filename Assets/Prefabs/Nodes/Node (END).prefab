@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4
+  changeVariables: 0
 --- !u!1 &546677959096467784
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class Nodes : MonoBehaviour
     [SerializeField] private List<GameObject> nodesPath;
     [SerializeField] private string[] localVariablesNames;
     [SerializeField] private int[] localVariablesValue;
+    [SerializeField] private int maxNode;
 
     public TMP_Text countdownText;
     public AudioClip song;
@@ -90,7 +91,6 @@ public class Nodes : MonoBehaviour
                 StartCoroutine(ShowFinishPanel());
             }
         }
-
     }
 
     public bool CheckNode(int nodeToCheck)
@@ -114,6 +114,11 @@ public class Nodes : MonoBehaviour
         return nodesPath[currentNode-1];
     }
 
+    public int GetMaxNode()
+    {
+        return maxNode;
+    }
+
     public int GetGoToNode()
     {
         try
@@ -124,7 +129,6 @@ public class Nodes : MonoBehaviour
         {
             return -999;
         }
-
     }
 
     IEnumerator ShowFinishPanel()
