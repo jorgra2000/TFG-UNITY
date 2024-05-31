@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carBody: {fileID: 1725339250327812541}
+  collisionSound: {fileID: 8300000, guid: d82187b776e804844a027881e7080424, type: 3}
   motorForce: 600
   breakForce: 3000
   maxSteerAngle: 30
@@ -365,7 +366,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 316224186e8ae6543990a05f4dc13981, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bb4547b12a2dc5544bc90a0d6cfed265, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

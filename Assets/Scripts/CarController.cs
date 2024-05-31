@@ -3,6 +3,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     public GameObject carBody;
+    public AudioClip collisionSound;
 
     private AudioSource audioSource;
     private float currentSpeed;
@@ -130,5 +131,18 @@ public class CarController : MonoBehaviour
        wheelCollider.GetWorldPose(out position, out rotation);
        wheelTransform.rotation = rotation;
        wheelTransform.position = position;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        float impactForce = collision.relativeVelocity.magnitude;
+
+
+        if (impactForce > 10f)
+        {
+            audioSource.volume = 0.5f;
+            audioSource.PlayOneShot(collisionSound);
+        }
+
     }
 }
