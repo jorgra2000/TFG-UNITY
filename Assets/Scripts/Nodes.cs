@@ -19,6 +19,7 @@ public class Nodes : MonoBehaviour
 
     public TMP_Text countdownText;
     public AudioClip song;
+    public AudioClip finishAudio;
 
     private CircuitsList circuitsData = new CircuitsList();
 
@@ -88,6 +89,8 @@ public class Nodes : MonoBehaviour
                 chronoScript.SetFinishedRace(true);
                 musicManager.GetComponent<AudioSource>().Stop();
                 musicManager.GetComponent<AudioSource>().loop = false;
+                musicManager.GetComponent<AudioSource>().clip = finishAudio;
+                musicManager.GetComponent<AudioSource>().Play();
                 StartCoroutine(ShowFinishPanel());
             }
         }
@@ -95,13 +98,21 @@ public class Nodes : MonoBehaviour
 
     public bool CheckNode(int nodeToCheck)
     {
-        if(nodeToCheck == nodesPath[currentNode].GetComponent<Node>().GetId())
+        try
         {
-            currentNode++;
-            return true;
+            if(nodeToCheck == nodesPath[currentNode].GetComponent<Node>().GetId())
+            {
+                currentNode++;
+                return true;
+            }
+
+            return false;
+        }
+        catch
+        {
+            return false;
         }
 
-        return false;
     }
 
     public int GetCurrentNodeNumber()
@@ -175,9 +186,8 @@ public class Nodes : MonoBehaviour
 
         countdownText.text = "GO!";
 
-        chronoScript.SetFinishedRace(false);
-
         yield return new WaitForSeconds(1f);
+        chronoScript.SetFinishedRace(false);
 
         countdownText.gameObject.SetActive(false);
 

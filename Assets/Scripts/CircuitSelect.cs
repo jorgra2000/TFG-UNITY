@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class CircuitSelect : MonoBehaviour
 {
     public TextAsset jsonFile;
-    public Image backImage;
     public Image codeImage;
+    public Material[] skyboxBackground;
 
     private CircuitsList circuitsData = new CircuitsList();
     private int currentNumberCircuit = 0;
@@ -24,14 +24,14 @@ public class CircuitSelect : MonoBehaviour
         leftButton = GameObject.Find("LeftButton");
         rightButton = GameObject.Find("RightButton");
 
-        backImage.sprite = Resources.Load<Sprite>("ImageCircuits/Screen1");
         codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit1");
+        RenderSettings.skybox = skyboxBackground[0];
     }
 
     void Update()
     {
-        backImage.sprite = Resources.Load<Sprite>("ImageCircuits/Screen" + (currentNumberCircuit+1));
         codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit" + (currentNumberCircuit+1));
+        RenderSettings.skybox = skyboxBackground[currentNumberCircuit];
 
         if(currentNumberCircuit == 0)
         {

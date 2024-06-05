@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject helpPanel;
+    public GameObject creditsPanel;
     private GameObject mainCamera;
     private float moveSpeed = 0.9f;
     private bool right = true;
@@ -51,5 +52,15 @@ public class MainMenu : MonoBehaviour
     public void ExitHelpButton()
     {
         helpPanel.SetActive(false);
+    }
+
+    public void CreditsButton()
+    {
+        creditsPanel.SetActive(true);
+    }
+
+    public void ExitCreditsButton()
+    {
+        creditsPanel.SetActive(false);
     }
 }
