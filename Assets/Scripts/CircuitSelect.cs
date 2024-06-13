@@ -24,13 +24,13 @@ public class CircuitSelect : MonoBehaviour
         leftButton = GameObject.Find("LeftButton");
         rightButton = GameObject.Find("RightButton");
 
-        codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit1");
+        codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit0");
         RenderSettings.skybox = skyboxBackground[0];
     }
 
     void Update()
     {
-        codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit" + (currentNumberCircuit+1));
+        codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit" + (currentNumberCircuit));
         RenderSettings.skybox = skyboxBackground[currentNumberCircuit];
 
         if(currentNumberCircuit == 0)
@@ -52,7 +52,7 @@ public class CircuitSelect : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Circuit " + (currentNumberCircuit+1));
+        SceneManager.LoadScene("Circuit " + (currentNumberCircuit));
     }
 
     public void LeftButton()

@@ -378,6 +378,7 @@ MonoBehaviour:
   jsonFile: {fileID: 4900000, guid: db8b57091150d5c40b1353e01cd79ea7, type: 3}
   codeImage: {fileID: 882237605}
   skyboxBackground:
+  - {fileID: 2100000, guid: efd1c33efd2d58340b88804268e6833f, type: 2}
   - {fileID: 2100000, guid: 3e5399bd195de7649b874f58c1b9f8a3, type: 2}
   - {fileID: 2100000, guid: f15c336556dd74f40aaca655f7767970, type: 2}
   - {fileID: 2100000, guid: 369b9ebe3a62b904dbc19bd332b44086, type: 2}

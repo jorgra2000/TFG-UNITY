@@ -1822,13 +1822,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 10, z: 0.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!1001 &729836145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2399,6 +2399,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9179851169754498460, guid: db493eb93567ae642bf4341d842135d6, type: 3}
   m_PrefabInstance: {fileID: 807008720}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &849101531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4999423107993756724, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+  m_PrefabInstance: {fileID: 8272658823235205753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &906944129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4787029517867504327, guid: fb2d04237b9d0de44a68dd6bd61dd288, type: 3}
@@ -2651,7 +2656,7 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 0
-  m_BlendUpdateMethod: 1
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -5456,14 +5461,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Car
       objectReference: {fileID: 0}
-    - target: {fileID: 1563649579536812002, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563649579536812002, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1777497641511680574, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -5504,22 +5501,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1992783150579806864, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992783150579806864, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3511117228352901317, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3511117228352901317, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4363016852938386163, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5552,18 +5533,6 @@ PrefabInstance:
       propertyPath: pathErrorImage
       value: 
       objectReference: {fileID: 1130519987}
-    - target: {fileID: 6201506689913838486, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8978954200923267191, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8978954200923267191, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6018,6 +5987,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 931909349}
     - target: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 849101531}
+    - target: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 992562052}
@@ -6202,6 +6175,10 @@ PrefabInstance:
     - target: {fileID: 4135879850688273447, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999423107993756724, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5789059047386294721, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
       propertyPath: m_Camera

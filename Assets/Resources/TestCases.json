@@ -1,6 +1,25 @@
 {
     "circuits": [
       {
+        "name": "Circuit 0",
+        "test_case": [
+          {
+            "case_": "a = True",
+            "input": 1,
+            "nodes": [
+              1,2,99,4
+            ]
+          },
+          {
+            "case_": "a = False",
+            "input": 2,
+            "nodes": [
+              1,3,99,4
+            ]
+          }
+        ]
+      },
+      {
         "name": "Circuit 1",
         "test_case": [
           {
@@ -62,6 +81,34 @@
       {
         "name": "Circuit 3",
         "test_case": [
+          {
+            "case_": "entrada = 0  veces = 0",
+            "input": 0,
+            "nodes": [
+              1,2,99,5
+            ]
+          },
+          {
+            "case_": "entrada = 1  veces = 1",
+            "input": 1,
+            "nodes": [
+              1,2,3,4,2,99,5
+            ]
+          },
+          {
+            "case_": "entrada = 1  veces = 2",
+            "input": 1,
+            "nodes": [
+              1,2,3,4,2,3,4,2,99,5
+            ]
+          },
+          {
+            "case_": "entrada = 2  veces = 3",
+            "input": 2,
+            "nodes": [
+              1,2,3,99,5
+            ]
+          }
         ]
       },
       {

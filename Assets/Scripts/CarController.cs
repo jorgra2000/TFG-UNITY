@@ -14,6 +14,7 @@ public class CarController : MonoBehaviour
     private bool isBreaking;
 
     private Chrono chronoScript;
+    private Rigidbody rb;
 
     [SerializeField] private float motorForce, breakForce, maxSteerAngle, minSpeedSound, maxSpeedSound, maxSpeed, minPitch, maxPitch;
 
@@ -26,6 +27,7 @@ public class CarController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         Renderer carRenderer = carBody.GetComponent<Renderer>();
         chronoScript = GameObject.Find("Controller").GetComponent<Chrono>();
+        rb = GetComponent<Rigidbody>();
 
         switch(PlayerPrefs.GetString("Color"))
         {
@@ -67,15 +69,14 @@ public class CarController : MonoBehaviour
     {
         float speed = verticalInput * motorForce;
 
-        if(speed > maxSpeed)
+        if(rb.velocity.magnitude > maxSpeed)
         {
-            speed = maxSpeed;
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+            speed = 0f;
         }
 
         frontWheelLeftCollider.motorTorque = speed;
         frontWheelRightCollider.motorTorque = speed;
-        backWheelLeftCollider.motorTorque = speed;
-        backWheelRightCollider.motorTorque = speed;
         currentBreakForce = isBreaking ? breakForce : 0f;
         Break();
     }

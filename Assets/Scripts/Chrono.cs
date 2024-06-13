@@ -4,7 +4,6 @@ using TMPro;
 public class Chrono : MonoBehaviour
 {
     public TMP_Text timeTextFinished;
-    public TMP_Text testCaseText;
 
     private float currentTime = 0f;
     private int secs, min;

@@ -20,6 +20,7 @@ public class Nodes : MonoBehaviour
     public TMP_Text countdownText;
     public AudioClip song;
     public AudioClip finishAudio;
+    public GameObject pauseButton;
 
     private CircuitsList circuitsData = new CircuitsList();
 
@@ -32,6 +33,7 @@ public class Nodes : MonoBehaviour
     private int inputValue;
     private int countdownValue = 3;
     private GameObject musicManager;
+    
 
 
     void Awake()
@@ -117,7 +119,15 @@ public class Nodes : MonoBehaviour
 
     public int GetCurrentNodeNumber()
     {
-        return nodesPath[currentNode-1].GetComponent<Node>().GetId();
+        try
+        {
+            return nodesPath[currentNode-1].GetComponent<Node>().GetId();
+        }
+        catch
+        {
+            return 0;
+        }
+
     }
 
     public GameObject GetCurrentNode()
@@ -190,6 +200,7 @@ public class Nodes : MonoBehaviour
         chronoScript.SetFinishedRace(false);
 
         countdownText.gameObject.SetActive(false);
+        pauseButton.SetActive(true);
 
         musicManager.GetComponent<AudioSource>().clip = song;
         musicManager.GetComponent<AudioSource>().loop = true;

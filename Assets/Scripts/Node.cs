@@ -14,7 +14,15 @@ public class Node : MonoBehaviour
     
     public int GetId()
     {
-        return id;
+        try
+        {
+            return id;
+        }
+        catch
+        {
+            return 0;
+        }
+
     }
 
     public void OnTriggerEnter(){
@@ -23,7 +31,15 @@ public class Node : MonoBehaviour
         {
             if(changeVariables)
             {
-                controllerScript.CalculateVariables(1,1);
+                try
+                {
+                    controllerScript.CalculateVariables(1,1);
+                }
+                catch
+                {
+                    print("Solo una variable");
+                }
+
                 controllerScript.CalculateVariables(0,controllerScript.GetInputValue());
                 controllerScript.UpdateVariablesText();
             }
