@@ -134,6 +134,11 @@ public class Nodes : MonoBehaviour
     {
         return nodesPath[currentNode-1];
     }
+        
+    public GameObject GetBeforeNode()
+    {
+        return nodesPath[currentNode-2];
+    }
 
     public int GetMaxNode()
     {

@@ -22,4 +22,9 @@ public class GameplayButtons : MonoBehaviour
         Time.timeScale = 1f;       
     }
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

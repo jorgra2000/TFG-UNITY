@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9c85a8e1f52c520458bc41759e0b4f12, type: 2}
     - target: {fileID: -927199367670048503, guid: 8733eb6d926c08040a9686e7e00c98cd, type: 3}
       propertyPath: m_Name
-      value: RTC_TurnU
+      value: Track_U
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8733eb6d926c08040a9686e7e00c98cd, type: 3}
       propertyPath: m_Layer
@@ -255,8 +255,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8733eb6d926c08040a9686e7e00c98cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3386739927477008152}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 8733eb6d926c08040a9686e7e00c98cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4844797042401069653}
   m_SourcePrefab: {fileID: 100100000, guid: 8733eb6d926c08040a9686e7e00c98cd, type: 3}
+--- !u!1 &2217465911355267635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8733eb6d926c08040a9686e7e00c98cd, type: 3}
+  m_PrefabInstance: {fileID: 7919554007521100602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4844797042401069653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217465911355267635}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50, y: 7.8856606, z: 28.684673}
+  m_Center: {x: 0, y: 3.4428308, z: 15.637655}
 --- !u!4 &2926597207409338400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8733eb6d926c08040a9686e7e00c98cd, type: 3}

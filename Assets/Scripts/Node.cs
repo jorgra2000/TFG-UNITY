@@ -5,7 +5,8 @@ public class Node : MonoBehaviour
     private Nodes controllerScript;
 
     [SerializeField] private int id;
-    [SerializeField] private bool changeVariables;
+    [SerializeField] private bool changeExit;
+    [SerializeField] private bool changeCont;
 
     private void Start()
     {
@@ -29,18 +30,15 @@ public class Node : MonoBehaviour
         
         if(controllerScript.CheckNode(id))
         {
-            if(changeVariables)
+            if(changeExit)
             {
-                try
-                {
-                    controllerScript.CalculateVariables(1,1);
-                }
-                catch
-                {
-                    print("Solo una variable");
-                }
-
                 controllerScript.CalculateVariables(0,controllerScript.GetInputValue());
+                controllerScript.UpdateVariablesText();
+            }
+
+            if(changeCont)
+            {
+                controllerScript.CalculateVariables(1,1);
                 controllerScript.UpdateVariablesText();
             }
         }

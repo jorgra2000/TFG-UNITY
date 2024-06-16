@@ -24,8 +24,19 @@ public class Respawn : MonoBehaviour
 
     public void RespawnInNode()
     {
-        car.transform.position = nodesScript.GetCurrentNode().transform.position;
-        car.transform.rotation = nodesScript.GetCurrentNode().transform.rotation;
+        GameObject respawnPlace;
+        if(nodesScript.GetCurrentNode().GetComponent<Node>().GetId() == 99)
+        {
+            respawnPlace = nodesScript.GetBeforeNode();
+        }
+        else
+        {
+            respawnPlace = nodesScript.GetCurrentNode();
+        }
+
+        car.transform.position = respawnPlace.transform.position;
+        car.transform.rotation = respawnPlace.transform.rotation;
+
         car.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 }

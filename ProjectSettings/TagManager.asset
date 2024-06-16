@@ -8,6 +8,7 @@ TagManager:
   - GoTo 3
   - GoTo 4
   - GoTo 5
+  - GoTo 6
   layers:
   - Default
   - TransparentFX
