@@ -30,6 +30,7 @@ public class CodeGraph : MonoBehaviour
         {
             currentNode = nodesScript.GetMaxNode() - 1;
         }
+
         ShowPanel(currentNode, nodeBefore);
     }
 

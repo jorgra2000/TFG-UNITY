@@ -190,7 +190,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1756104461153071980, guid: b889f41e54e1c1e4fb173fba8643a27a, type: 3}
+  m_Mesh: {fileID: 8497703839345152918, guid: 2a5829c5f202ed04ca5e0b4ca05f4492, type: 3}
 --- !u!1 &8082529252216562564
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,5 +319,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 40.000008, y: 4, z: 38.753963}
-  m_Center: {x: -10.000002, y: -0.24999905, z: 22.917208}
+  m_Size: {x: 40.000008, y: 4, z: 40.34037}
+  m_Center: {x: -10.000002, y: -0.24999905, z: 22.124002}

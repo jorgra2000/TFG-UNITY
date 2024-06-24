@@ -7,12 +7,22 @@ public class CircuitSelect : MonoBehaviour
     public TextAsset jsonFile;
     public Image codeImage;
     public Material[] skyboxBackground;
+    public GameObject mutedImage;
 
     private CircuitsList circuitsData = new CircuitsList();
     private int currentNumberCircuit = 0;
 
     private GameObject leftButton;
     private GameObject rightButton;
+
+    public void Awake()
+    {
+        if(PlayerPrefs.GetInt("Muted") == 1)
+        {
+            GameObject.Find("MusicManager").GetComponent<AudioSource>().enabled = false;
+            mutedImage.SetActive(true);
+        }
+    }
 
     void Start()
     {
@@ -30,6 +40,7 @@ public class CircuitSelect : MonoBehaviour
 
     void Update()
     {
+        CheckAudio();
         codeImage.sprite = Resources.Load<Sprite>("Code/CodeCircuit" + (currentNumberCircuit));
         RenderSettings.skybox = skyboxBackground[currentNumberCircuit];
 
@@ -67,6 +78,36 @@ public class CircuitSelect : MonoBehaviour
             currentNumberCircuit++;
     }
 
+    public void BackScene()
+    {
+        SceneManager.LoadScene("SelectCar");
+    }
+
+        public void MuteButton()
+    {
+        if(PlayerPrefs.GetInt("Muted") == 0)
+        {
+            PlayerPrefs.SetInt("Muted", 1);
+            mutedImage.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Muted", 0);
+            mutedImage.SetActive(false);
+        }
+    }
+
+    public void CheckAudio()
+    {
+        if(PlayerPrefs.GetInt("Muted") == 1)
+        {
+            GameObject.Find("MusicManager").GetComponent<AudioSource>().enabled = false;
+        }
+        else
+        {
+            GameObject.Find("MusicManager").GetComponent<AudioSource>().enabled = true;
+        }
+    }
     
     
     //JSON circuits

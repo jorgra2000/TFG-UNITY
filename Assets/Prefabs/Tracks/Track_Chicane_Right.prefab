@@ -107,7 +107,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -9109485900387971774, guid: a122cf26fd29e0f43b9350fdc12ce444, type: 3}
+  m_Mesh: {fileID: -26961135544007897, guid: f30d8323957846c4ea2189d13479fa3d, type: 3}
 --- !u!1001 &4296532450379681471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,6 +116,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6860895033569716450, guid: ce6aa31e175c70143b3667ae5a26973a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5688491111258559772, guid: ce6aa31e175c70143b3667ae5a26973a, type: 3}
     - target: {fileID: -4216859302048453862, guid: ce6aa31e175c70143b3667ae5a26973a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -210,8 +214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 40, y: 5.2072964, z: 24.087463}
-  m_Center: {x: 10, y: 2.1036477, z: 15.037689}
+  m_Size: {x: 40, y: 5.2072964, z: 25.376984}
+  m_Center: {x: 10, y: 2.1036477, z: 15.682449}
 --- !u!4 &9140879739899635109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ce6aa31e175c70143b3667ae5a26973a, type: 3}

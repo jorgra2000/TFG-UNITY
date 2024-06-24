@@ -7,7 +7,7 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Barrier_Physic
-  dynamicFriction: 5
+  dynamicFriction: 4
   staticFriction: 1
   bounciness: 0
   frictionCombine: 2

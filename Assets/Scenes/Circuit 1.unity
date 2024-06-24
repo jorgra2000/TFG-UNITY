@@ -3019,6 +3019,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9179851169754498460, guid: db493eb93567ae642bf4341d842135d6, type: 3}
   m_PrefabInstance: {fileID: 1100507854}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109220475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
+  m_PrefabInstance: {fileID: 7998884288204578114}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511ab88cd9defb34d9457dc642358a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130519987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5810958585819755215, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
@@ -3970,6 +3981,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9179851169754498460, guid: db493eb93567ae642bf4341d842135d6, type: 3}
   m_PrefabInstance: {fileID: 1490870872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1496532956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8392664067141803152, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+  m_PrefabInstance: {fileID: 8272658823235205753}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1499324682
 PrefabInstance:
@@ -5993,6 +6009,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 096d4e8130758164d8dd1f12e1cd51fc, type: 3}
     - target: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
+      propertyPath: exitButton
+      value: 
+      objectReference: {fileID: 8272658823235205754}
+    - target: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
+      propertyPath: mutedImage
+      value: 
+      objectReference: {fileID: 1496532956}
+    - target: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
       propertyPath: finishPanel
       value: 
       objectReference: {fileID: 931909349}
@@ -6004,6 +6028,10 @@ PrefabInstance:
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 992562052}
+    - target: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
+      propertyPath: pathErrorPanel
+      value: 
+      objectReference: {fileID: 1130519987}
     - target: {fileID: 8082170046298923718, guid: 7946ea0d5277f284db9706df31187645, type: 3}
       propertyPath: nodes.Array.data[0]
       value: 
@@ -6102,9 +6130,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1112840316770729998, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3302694585870977115, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598156968639684620, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1109220475}
+    - target: {fileID: 3598156968639684620, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MuteButton
       objectReference: {fileID: 0}
     - target: {fileID: 3795704722978014475, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
       propertyPath: m_Pivot.x
@@ -6186,6 +6226,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4058624086027873924, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4135879850688273447, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -6198,12 +6242,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 8392664067141803152, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4180993077663543490, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+--- !u!1 &8272658823235205754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4437527826935894579, guid: 8ed27060733d8ef41b574dea3ebbb9ed, type: 3}
+  m_PrefabInstance: {fileID: 8272658823235205753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8277265263379039870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9166297964687429805, guid: 3e18a12a58a62ba4bb000ab537f72faf, type: 3}

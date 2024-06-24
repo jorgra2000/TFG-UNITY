@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5254986767044852956}
   - component: {fileID: 1563649579536812002}
+  - component: {fileID: 4497230868450540394}
   m_Layer: 0
   m_Name: RearLeftWheel
   m_TagString: Untagged
@@ -154,6 +155,24 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &4497230868450540394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643696536331236148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useWheelAntiStuck: 1
+  raysNumber: 36
+  raysMaxAngle: 180
+  wheelWidth: 0.25
+  wheelModel: {fileID: 4724725297836607384}
+  carController: {fileID: 5778114107548703203}
 --- !u!1 &1344245400293188322
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6080793314738736210}
   - component: {fileID: 8978954200923267191}
+  - component: {fileID: 6711387382670267707}
   m_Layer: 0
   m_Name: FrontRightWheel
   m_TagString: Untagged
@@ -225,6 +245,24 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &6711387382670267707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344245400293188322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useWheelAntiStuck: 1
+  raysNumber: 36
+  raysMaxAngle: 180
+  wheelWidth: 0.25
+  wheelModel: {fileID: 3691945853936946820}
+  carController: {fileID: 5778114107548703203}
 --- !u!1 &1432461355580235908
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,9 +311,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432461355580235908}
   serializedVersion: 4
-  m_Mass: 2000
-  m_Drag: 0.1
-  m_AngularDrag: 0.9
+  m_Mass: 2500
+  m_Drag: 0.15
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -306,14 +344,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carBody: {fileID: 1725339250327812541}
   collisionSound: {fileID: 8300000, guid: 08470aa280819df49bc419dc752f397b, type: 3}
-  motorForce: 3000
+  motorForce: 3200
   breakForce: 3000
   maxSteerAngle: 30
   minSpeedSound: 1
-  maxSpeedSound: 350
+  maxSpeedSound: 35
   maxSpeed: 35
   minPitch: 0.2
-  maxPitch: 1.7
+  maxPitch: 1.1
   frontWheelLeftCollider: {fileID: 1992783150579806864}
   frontWheelRightCollider: {fileID: 8978954200923267191}
   backWheelLeftCollider: {fileID: 1563649579536812002}
@@ -570,6 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7528308662891950812}
   - component: {fileID: 3511117228352901317}
+  - component: {fileID: 185731635825685716}
   m_Layer: 0
   m_Name: RearRightWheel
   m_TagString: Untagged
@@ -631,6 +670,24 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &185731635825685716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747574608038432289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useWheelAntiStuck: 1
+  raysNumber: 36
+  raysMaxAngle: 180
+  wheelWidth: 0.25
+  wheelModel: {fileID: 4499300007860512955}
+  carController: {fileID: 5778114107548703203}
 --- !u!1 &3098278407514312248
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5989064391527191076}
   - component: {fileID: 1992783150579806864}
+  - component: {fileID: 6169572791296044126}
   m_Layer: 0
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -899,6 +957,24 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &6169572791296044126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068878899463306350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useWheelAntiStuck: 1
+  raysNumber: 36
+  raysMaxAngle: 180
+  wheelWidth: 0.25
+  wheelModel: {fileID: 774447812055640244}
+  carController: {fileID: 5778114107548703203}
 --- !u!1 &5553860537687226337
 GameObject:
   m_ObjectHideFlags: 0

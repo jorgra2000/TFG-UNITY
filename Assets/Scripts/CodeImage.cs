@@ -30,6 +30,10 @@ public class CodeImage : MonoBehaviour
         {
             currentNode = nodesScript.GetMaxNode() - 1;
         }
+        if(currentNode < 0)
+        {
+            currentNode = 0;
+        }
         ShowPanel(currentNode, nodeBefore);
     }
 

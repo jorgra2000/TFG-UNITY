@@ -21,6 +21,9 @@ public class Nodes : MonoBehaviour
     public AudioClip song;
     public AudioClip finishAudio;
     public GameObject pauseButton;
+    public GameObject exitButton;
+    public GameObject mutedImage;
+    public GameObject pathErrorPanel;
 
     private CircuitsList circuitsData = new CircuitsList();
 
@@ -38,8 +41,18 @@ public class Nodes : MonoBehaviour
 
     void Awake()
     {
-        GameObject musicManager = GameObject.Find("MusicManager");
-        Destroy(musicManager);
+        GameObject musicManagerPrev = GameObject.Find("MusicManager");
+        Destroy(musicManagerPrev);
+
+        musicManager = GameObject.Find("MusicManagerGame");
+
+        if(PlayerPrefs.GetInt("Muted") == 1)
+        {
+            musicManager.GetComponent<AudioSource>().volume = 0f;
+            GameObject.Find("Player_Car").GetComponent<AudioSource>().volume = 0f;
+            pathErrorPanel.GetComponent<AudioSource>().volume = 0f;
+            mutedImage.SetActive(true);
+        }
     }
 
     void Start()
@@ -47,7 +60,7 @@ public class Nodes : MonoBehaviour
         variablesText = GameObject.Find("VariablesText").GetComponent<TMP_Text>();
         testText = GameObject.Find("TestCaseText").GetComponent<TMP_Text>();
         chronoScript = GameObject.Find("Controller").GetComponent<Chrono>();
-        musicManager = GameObject.Find("MusicManagerGame");
+        
 
         if (jsonFile != null)
         {
@@ -79,11 +92,12 @@ public class Nodes : MonoBehaviour
         UpdateVariablesText();
 
         StartCoroutine(CountdownStart());
-        //TO DO: Esperar un segundo o dos para hacer el sonido de 3 2 1
     }
 
     void Update()
     {
+        CheckAudio();
+
         if(currentNode == nodesPath.Count)
         {
             if(!chronoScript.GetFinishedRace())
@@ -190,6 +204,11 @@ public class Nodes : MonoBehaviour
 
     IEnumerator CountdownStart()
     {
+        yield return new WaitForSeconds(1.5f);
+
+        countdownText.gameObject.SetActive(true);
+        musicManager.GetComponent<AudioSource>().Play();
+
         while(countdownValue > 0)
         {
             countdownText.text = countdownValue.ToString();
@@ -206,10 +225,41 @@ public class Nodes : MonoBehaviour
 
         countdownText.gameObject.SetActive(false);
         pauseButton.SetActive(true);
+        exitButton.SetActive(true);
 
         musicManager.GetComponent<AudioSource>().clip = song;
         musicManager.GetComponent<AudioSource>().loop = true;
         musicManager.GetComponent<AudioSource>().Play();
+    }
+
+        public void MuteButton()
+    {
+        if(PlayerPrefs.GetInt("Muted") == 0)
+        {
+            PlayerPrefs.SetInt("Muted", 1);
+            mutedImage.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Muted", 0);
+            mutedImage.SetActive(false);
+        }
+    }
+
+    public void CheckAudio()
+    {
+        if(PlayerPrefs.GetInt("Muted") == 1)
+        {
+            musicManager.GetComponent<AudioSource>().volume = 0f;
+            GameObject.Find("Player_Car").GetComponent<AudioSource>().volume = 0f;
+            pathErrorPanel.GetComponent<AudioSource>().volume = 0f;
+        }
+        else
+        {
+            musicManager.GetComponent<AudioSource>().volume = 0.2f;
+            GameObject.Find("Player_Car").GetComponent<AudioSource>().volume = 1f;
+            pathErrorPanel.GetComponent<AudioSource>().volume = 1f;
+        }
     }
 
 

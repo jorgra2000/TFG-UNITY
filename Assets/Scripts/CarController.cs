@@ -115,7 +115,7 @@ public class CarController : MonoBehaviour
 
         if(currentSpeed >= maxSpeedSound)
         {
-            audioSource.pitch = maxSpeedSound;
+            audioSource.pitch = maxPitch;
         }
     }
 
