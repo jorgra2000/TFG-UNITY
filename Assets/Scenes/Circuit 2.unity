@@ -4086,7 +4086,7 @@ PrefabInstance:
     - target: {fileID: 3463018275421459819, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 13400000, guid: c0c749cabf9e8ef4c9b0158f1a0c4e46, type: 2}
     - target: {fileID: 6007481763614333853, guid: e668f75f524152e45bb3bb96882fb4ea, type: 3}
       propertyPath: codeGraph
       value: 

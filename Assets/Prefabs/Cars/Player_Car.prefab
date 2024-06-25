@@ -162,7 +162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643696536331236148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
   m_Name: 
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344245400293188322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
   m_Name: 
@@ -312,7 +312,7 @@ Rigidbody:
   m_GameObject: {fileID: 1432461355580235908}
   serializedVersion: 4
   m_Mass: 2500
-  m_Drag: 0.15
+  m_Drag: 0.1
   m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carBody: {fileID: 1725339250327812541}
   collisionSound: {fileID: 8300000, guid: 08470aa280819df49bc419dc752f397b, type: 3}
-  motorForce: 3200
+  motorForce: 3300
   breakForce: 3000
   maxSteerAngle: 30
   minSpeedSound: 1
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747574608038432289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
   m_Name: 
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4068878899463306350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18333b2106daf5643bdb93d901736e7c, type: 3}
   m_Name: 

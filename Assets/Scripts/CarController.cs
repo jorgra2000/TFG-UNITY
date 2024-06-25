@@ -77,8 +77,8 @@ public class CarController : MonoBehaviour
 
         frontWheelLeftCollider.motorTorque = speed;
         frontWheelRightCollider.motorTorque = speed;
-        backWheelLeftCollider.motorTorque = 1;
-        backWheelRightCollider.motorTorque = 1;
+        backWheelLeftCollider.motorTorque = 10;
+        backWheelRightCollider.motorTorque = 10;
         currentBreakForce = isBreaking ? breakForce : 0f;
         Break();
     }
