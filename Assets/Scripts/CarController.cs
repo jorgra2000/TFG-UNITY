@@ -10,13 +10,13 @@ public class CarController : MonoBehaviour
     private float pitchCar;
 
     private float horizontalInput, verticalInput;
-    private float currentBreakForce, currentSteerAngle;
-    private bool isBreaking;
+    private float currentBrakeForce, currentSteerAngle;
+    private bool isBraking;
 
     private Chrono chronoScript;
     private Rigidbody rb;
 
-    [SerializeField] private float motorForce, breakForce, maxSteerAngle, minSpeedSound, maxSpeedSound, maxSpeed, minPitch, maxPitch;
+    [SerializeField] private float motorForce, brakeForce, maxSteerAngle, minSpeedSound, maxSpeedSound, maxSpeed, minPitch, maxPitch;
 
     [SerializeField] private WheelCollider frontWheelLeftCollider, frontWheelRightCollider, backWheelLeftCollider, backWheelRightCollider;
     [SerializeField] private Transform frontWheelLeftTransform, frontWheelRightTransform, backWheelLeftTransform, backWheelRightTransform;
@@ -62,7 +62,7 @@ public class CarController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        isBreaking = Input.GetKey(KeyCode.Space);
+        isBraking = Input.GetKey(KeyCode.Space);
     }
    
     void Motor()
@@ -79,16 +79,16 @@ public class CarController : MonoBehaviour
         frontWheelRightCollider.motorTorque = speed;
         backWheelLeftCollider.motorTorque = 10;
         backWheelRightCollider.motorTorque = 10;
-        currentBreakForce = isBreaking ? breakForce : 0f;
-        Break();
+        currentBrakeForce = isBraking ? brakeForce : 0f;
+        Brake();
     }
     
-    void Break()
+    void Brake()
     {
-       frontWheelLeftCollider.brakeTorque = currentBreakForce;
-       frontWheelRightCollider.brakeTorque = currentBreakForce;
-       backWheelLeftCollider.brakeTorque = currentBreakForce;
-       backWheelRightCollider.brakeTorque = currentBreakForce; 
+       frontWheelLeftCollider.brakeTorque = currentBrakeForce;
+       frontWheelRightCollider.brakeTorque = currentBrakeForce;
+       backWheelLeftCollider.brakeTorque = currentBrakeForce;
+       backWheelRightCollider.brakeTorque = currentBrakeForce; 
     }
 
     void Steering()

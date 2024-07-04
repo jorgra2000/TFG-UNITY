@@ -3,8 +3,6 @@ using UnityEngine;
 public class PathError : MonoBehaviour
 {
     public GameObject pathErrorImage;
-    public CodeGraph codeGraph;
-    public CodeImage codeImage;
 
     private Nodes nodesScript;
     private Respawn respawnScript;

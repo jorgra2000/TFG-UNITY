@@ -80,6 +80,12 @@ public class MainMenu : MonoBehaviour
         Application.OpenURL("https://jorgra2000-games.itch.io/");
     }
 
+    //Only Windows version
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
     public void MuteButton()
     {
         if(PlayerPrefs.GetInt("Muted") == 0)

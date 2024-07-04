@@ -232,7 +232,7 @@ public class Nodes : MonoBehaviour
         musicManager.GetComponent<AudioSource>().Play();
     }
 
-        public void MuteButton()
+    public void MuteButton()
     {
         if(PlayerPrefs.GetInt("Muted") == 0)
         {
